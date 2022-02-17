@@ -1,0 +1,7 @@
+Django
+psycopg2
+uwsgi
+django-bootstrap5
+pillow
+django-allauth
+psycopg2-binary

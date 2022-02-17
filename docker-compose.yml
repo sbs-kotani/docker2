@@ -1,0 +1,35 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx_sbsx
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+      - ./src/static:/static
+    ports:
+      - '7010:80'
+    depends_on:
+      - django
+  django:
+    build: ./django
+    container_name: django_sbsx
+    expose:
+      - '8001'
+    volumes:
+      - ./src:/code
+    command: uwsgi --socket :8001 --module private_diary.wsgi
+    depends_on:
+      - db
+  db:
+    image: postgres:latest
+    container_name: db_sbsx
+    volumes:
+      - ./db/dbdata:/var/lib/postgresql/data
+    expose:
+      - '5432'
+    environment:
+      POSTGRES_USER : sbs
+      POSTGRES_PASSWORD : sbsgakuen
+      POSTGRES_DB : private_diary
+     
