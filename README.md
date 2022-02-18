@@ -1,9 +1,9 @@
 # docker2
 Docker環境へのアップ
 
-git clone https://github.com/sbs-kotani/docker2.git
-git clone https://github.com/各自のgithub名/private_diary.git
-python3 -m venv env
+git clone https://github.com/sbs-kotani/docker2.git 
+git clone https://github.com/各自のgithub名/private_diary.git 
+python3 -m venv env 
 source env/bin/activate
 
 cd docker2
@@ -31,5 +31,5 @@ docker-compose run django python3 ./manage.py makemigrations
 docker-compose run django python3 ./manage.py migrate
 sudo chown -R $USER:$USER .
 
-docker-compose up
+docker-compose up 
 
