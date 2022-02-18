@@ -1,10 +1,10 @@
 # docker2
 Docker環境へのアップ
 
-git clone https://github.com/sbs-kotani/docker2.git 
-git clone https://github.com/各自のgithub名/private_diary.git 
-python3 -m venv env 
-source env/bin/activate
+git clone https://github.com/sbs-kotani/docker2.git                                             
+git clone https://github.com/各自のgithub名/private_diary.git                            
+python3 -m venv env                       
+source env/bin/activate                                           
 
 cd docker2
 docker-compose run django django-admin startproject private_diary .
