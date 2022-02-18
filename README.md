@@ -25,7 +25,7 @@ nano src/private_diary/settings.py
 		ALLOWED_HOSTS = ["*"]に変更
 		DATABASESのHOST、PORT部を以下の値に変更する。
 		'HOST': 'db',
-    ’PORT'： '5432',
+		’PORT'： '5432',
 		
 docker-compose run django python3 ./manage.py makemigrations
 docker-compose run django python3 ./manage.py migrate
